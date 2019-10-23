@@ -14,9 +14,10 @@ var Stack = function() {
   // add string to top of stack
 
   someInstance.pop = function() {
-    delete storage[count];
+    var top = storage[count - 1];
+    delete storage[count - 1];
     count--;
-    return storage[count];
+    return top;
   };
 
   // remove and return string on top of stack
@@ -26,7 +27,7 @@ var Stack = function() {
       return 0;
     }
 
-    return Object.keys(storage).length;
+    return count;
   };
 
   // return number of items on stack
