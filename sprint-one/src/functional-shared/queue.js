@@ -39,5 +39,3 @@ queueMethods.size = function() {
 
   return this.count;
 };
-
-var q = Queue('a');
