@@ -15,15 +15,21 @@ var Queue = function() {
   // add a string to the back of the queue
 
   someInstance.dequeue = function() {
-    var first = storage[head];
+    var front = storage[head];
     delete storage[head];
     head++;
-    return first;
+    return front;
   };
   // remove and return the string at the front of the queue
 
   someInstance.size = function() {
-    return Object.keys(storage).length;
+    if (head > count) {
+      return 0;
+    } else if (count > head) {
+      return count - head;
+    }
+
+    return count;
   };
   // return the number of items in the queue
 
