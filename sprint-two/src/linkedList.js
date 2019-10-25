@@ -19,9 +19,19 @@ var LinkedList = function () {
   };
 
   list.removeHead = function () {
+    // set node to head
+    var oldHead = this.head.value;
+    this.head = this.head.next;
+    return oldHead;
   };
 
   list.contains = function (target) {
+    var hasNode = false;
+    if (this.head.value === target || this.tail.value === target) {
+      hasNode = true;
+    }
+
+    return hasNode;
   };
 
   return list;
