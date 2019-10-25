@@ -22,4 +22,4 @@ Stack.prototype.size = function() {
   }
 
   return this.count;
-}
+};
